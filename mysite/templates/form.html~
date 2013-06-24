@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/home/manank/project/mysite/templates/forms.css "/>
+		<title> Form </title>
+		
+		<script type="text/javascript" src="validation.js"></script>
+		
+	</head>
+	
+	<body>
+	
+	<div id="header">
+		<h2 text="center">Registration Form </h2>
+		
+		
+	</div>
+	
+	<div id="main">
+		<form name="myform" action="#" onsubmit="javascript:return validateform()" method="post">
+
+		<ul type="none">
+		<li>Name : <input type="text" name="name"> </li>
+		<li>Email ID : <input type="email" name="email_user"> </li>
+		<li>Password : <input type="password" name="pwd"></li>
+		<li>Confirm pass : <input type="password" name="confpwd"></li>
+		<li>Mobile: <input type="tel" name="cellnumber"></li>
+		<li>Gender <input type="radio" name="sex" value="male">Male <input type="radio" name="sex" value="female">Female</li>
+		<li>Country <select name="country"> 
+				<option value="India">India</option>
+				<option value="USA">USA</option>
+				<option value="UK">UK</option>
+				<option value="Canada">Canada</option>
+			</select>
+		</li>
+		<li><input type="checkbox" name="terms" onclick="EnableDisable(this);"> Terms and Conditions <li> 
+		</ul>
+		<input type="submit" value="Submit">
+		</form>
+		
+		
+	</div>
+	
+	<div id="footer">
+	
+	<p> Copyright@2013 </p>	
+	</div>
+	
+	</body>
+	
+</html>

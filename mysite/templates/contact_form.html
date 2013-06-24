@@ -1,0 +1,70 @@
+<html>
+<head>
+	
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'form.css' %}" type="text/css">
+	
+	<script type="text/javascript" src="{% static 'validation.js'%}"></script>
+
+	
+	
+	<title> Form </title>
+</head>
+<body>
+    	<div id="header">
+		<h2 text="center">Registration Form </h2>		
+	</div>
+
+	<div id="main">
+	{% if not contact_sent %}
+	
+    		{% if form.errors %}
+        	<p style="color: red;"> Please correct the error{{ form.errors|pluralize }} below. </p>
+   		{% endif %}
+
+    		<form text="center" name = "myform" action="" method="post" onsubmit="return validateform();">
+        		<ul type="none">
+				<li>Name : <input type="text" name="name"> </li>
+				<li>Email ID : <input type="email" name="email"> </li>
+				<li>Password : <input type="password" name="pwd"></li>
+				<li>Confirm Password : <input type="password" name="confpwd"></li>
+				<li>Mobile: <input type="tel" name="mob"></li>
+				<li>Date of Birth : <input type="date" name="dob">
+				
+				<li>Gender
+					<input type="radio" name = "gender" value="male"> Male 
+					<input type="radio"  name = "gender" value="female"> Female
+					
+				</li>
+				<li>Country <select name="country"> 
+						<option value="India">India</option>
+						<option value="USA">USA</option>
+						<option value="UK">UK</option>
+						<option value="Canada">Canada</option>
+					</select>
+				</li>
+			<li><input type="checkbox" name="terms" onclick="EnableDisable(this);"> Terms and Conditions <li> 
+			</ul>
+       		 {% csrf_token %}
+        
+        
+        
+        	 <input type="submit" value="Submit" onclick="return validateform();" >
+                  
+    		</form>
+    	
+    	{% else %}
+
+    	<p>Contact already sent </p>
+    
+    {% endif %}
+    		
+	
+	</div>
+
+	<div id="footer">
+	
+		<p> Copyright@2013 </p>	
+	</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+<head>
+
+	<style type="text/css">
+    	ul.errorlist {
+        	margin: 0;
+        	padding: 0;
+    		}
+    	.errorlist li {
+        	background-color: red;
+        	color: white;
+       		display: block;
+        	font-size: 10px;
+        	margin: 0 0 3px;
+        	padding: 4px 5px;
+    }
+	</style>
+	
+	{% load static %}
+	<link rel="stylesheet" href="{% static '/static/form.css' %}" type="text/css">
+
+	
+	
+	<title> Form </title>
+</head>
+<body>
+    	<div id="header">
+		<h2 text="center">Registration Form </h2>		
+	</div>
+
+	<div id="main">
+	
+    	{% if form.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    	{% endif %}
+
+    <form action="" method="post">
+        <table>
+            {{ form.as_table }}
+        </table>
+        {% csrf_token %}
+           <input type="submit" value="Submit">
+    </form>
+	</div>
+
+	<div id="footer">
+	
+		<p> Copyright@2013 </p>	
+	</div>
+</body>
+</html>

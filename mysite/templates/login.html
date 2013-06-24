@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login pagee</title>
+	</head>
+	<body>
+		<div id="header">
+		<h2 text="center">Login in </h2>
+		</div>
+
+		<div id= "main">
+				{{state}}
+		
+			<form action="" method="post">
+    			<label for="username">User name:</label>
+    			<input type="text" name="username" value="" id="username">
+    			<label for="password">Password:</label>
+    			<input type="password" name="password" value="" id="password">
+
+    			<input type="submit" value="login" />
+    			<input type="hidden" name="next" value="{{ next|escape }}" />
+  			</form>
+		</div>
+
+	</body>
+</html>
